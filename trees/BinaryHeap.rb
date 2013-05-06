@@ -106,6 +106,7 @@ class BinaryHeap
        pop!
      end
    end
+   alias :poll :pop!
 
    # Returns true if self contains no elements.
    # Note a heap may be non-nil but empty. 
@@ -194,7 +195,7 @@ protected
     end
   end
 
-  # swap the current node's value with it's parent's if greater
+  # swap the current node's value with it's biggest child
   # used to rearrange tree on deletions see http://en.wikipedia.org/wiki/Binary_heap#Delete
   def heapify_down
     l  = @left.nil? ? @value : @left.value
@@ -202,8 +203,7 @@ protected
     if l > @value && l >= r
       @value,@left.value = @left.value,@value
       @left.heapify_down
-    end
-    if r > @value && r >= l
+    elsif r > @value && r >= l
       @value,@right.value = @right.value,@value
       @right.heapify_down
     end
