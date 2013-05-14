@@ -1,13 +1,13 @@
-require_relative '../PriorityQueue'
+require_relative '../lib/containers/heap'
 
-describe PriorityQueue do
+describe Heap do
   before :each do
-    @heap = PriorityQueue.new(1)
+    @heap = Heap.new(1)
   end
 
   describe "#new" do
     it "takes zero or one parameter with the node value" do
-      @heap.should be_an_instance_of PriorityQueue
+      @heap.should be_an_instance_of Heap
     end
   end
 
@@ -16,7 +16,7 @@ describe PriorityQueue do
       @heap.insert(2)
       @heap.insert(3)
       @heap.weight.should eql 3
-      @heap = PriorityQueue.new()
+      @heap = Heap.new()
       @heap.insert(2)
       @heap.insert(3)
       @heap.weight.should eql 2
@@ -42,7 +42,7 @@ describe PriorityQueue do
     it "should return items in order" do
       a = Array.new
       b = Array.new
-      h = PriorityQueue.new
+      h = Heap.new
       (0...100).each do |n| a << n end
       (0...100).each do |n| b << n end
       a.shuffle
@@ -59,7 +59,7 @@ describe PriorityQueue do
 
   describe "empty is not nil" do
     it "should be non-nil even if empty" do
-      h = PriorityQueue.new
+      h = Heap.new
       h << 3
       a = h.pop!
       a.should eql 3

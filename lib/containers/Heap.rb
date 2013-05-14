@@ -1,5 +1,6 @@
-# A heap organizes data so that requests for the next element in the heap always returns the largest
-# element according to some order. 
+# A heap organizes data so that requests for the next element in the
+# heap always returns the largest/smallest element according to some
+# order.  
 #
 # Heaps with a mathematical "greater than or equal to" comparison
 # function are called max-heaps; those with a mathematical "less than
@@ -14,12 +15,21 @@
 #    h << 6 << 4 << 7 << 3
 #    h.pop! 
 #    => 7
+# 
+# Heaps are often used for priority queues, but note that in order to
+# generalize the API, the heap does not dictate a separate parameter
+# for priority. If you want to use this heap as a priority queue, you
+# can simply leverage the comparision block this way:
+#
+# priorityQueue = Heap.new(nil,lambda {|x,y| (x[0] <=> y[0]) == 1}
+#
+# insert an item with priority 1
+# priorityQueue << [1,element_a]
+# insert an item with priority 4
+# priorityQueue << [4,element_b]
 #
 class Heap
  # top value of the heap
-
-  alias :peek :value
-  #TODO: simplify/rubify
 
   # * +value+ optional root node value. If nil, size of the heap is 0.
   # * +block+ optional comparision block. By default block equivalent
@@ -84,6 +94,7 @@ class Heap
   def value
     @q.first
   end
+  alias :peek :value
 
 
 protected
