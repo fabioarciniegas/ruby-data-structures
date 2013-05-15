@@ -56,7 +56,10 @@ class BinaryHeap
     @weight = value.nil? ? 0 : 1
   end
 
-  # insert value in BinaryHeap and returns self
+  # call-seq:
+  # insert(value) -> this
+  #
+  # Insert value in BinaryHeap and returns self
   # rearranges heap so all properties are maintained
   def insert(value)
     @weight = @weight+1
@@ -79,6 +82,7 @@ class BinaryHeap
     self
    end
   alias :<< :insert
+  alias :push :insert
 
   # return and remove the top of the heap. use #peek for returning top
   # of the heap without removing it.
