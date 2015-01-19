@@ -1,0 +1,37 @@
+class Quicksort
+  
+
+  def self.partition(a,i,k)
+    pivot = i+rand(k-i)
+    j = i
+    # put pivot as first element for simplicity
+    a[i],a[pivot] = a[pivot],a[i] #ruby allows you this kind of syntactic sugar
+    partition = j
+    while j < k
+      if a[j] <= a[i]
+        a[j],a[partition] = a[partition],a[j]
+        partition = partition + 1
+      end
+      j = j+1
+    end
+    partition = partition -1 # went off one more than needed in the last iteration
+    a[i],a[partition] = a[partition],a[i]
+    partition
+  end
+
+  def self.sort(a,i,l)
+    return i unless l-i > 1    
+    p = partition(a,i,l)
+    sort(a,i,p)
+    sort(a,p,l)
+  end
+
+end
+
+
+a = Array.new
+(0..2000000).each do |n|  a << rand(20000000) end
+Quicksort.sort(a,0,a.length)
+#a.each do |n| print n,"<" end
+
+print a[0],"<",a[1000],"<",a[a.length-1]
