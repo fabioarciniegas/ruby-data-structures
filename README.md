@@ -1,12 +1,16 @@
-Interesting data structures implemented natively in Ruby. 
+Non-trivial data structures and Algorithms implemented in Ruby for fun (yet correctly).
 
-Implemented so far:
  - AVL Tree
  - BinaryHeap
  - Traditional Array-implemented Heap
  - PriorityQueue (based on heap)
+
+ - Quicksort
  
 
-After a long time in the real world it is easy to forget the simple fun that got us computer scientists hooked into software in the first place: watching algorithms work, popping the right numbers on the screen. This project's main goal is to have fun coding classic data structures like AVL trees, from scratch. Of course, if you are in need of any one of these datastructures implemented natively in ruby, you are welcome to use them.
+After enough time in "the real world" where so much of the focus is on rather easy but combersome integration/business needs/etc. it is easy to forget the simple elegance that got us computer scientists hooked into software in the first place: watching algorithms work. This project's goal is to have fun coding data structures such as Red-Black trees and classic algorithms liks Quicksort, from scratch. 
+
+If you are in need of any one of these structures in ruby, you are welcome to use them (except of course if you need them for school, in which case I strongly recommend you watch a good video online and implement it yourself. Professor Tim Rothgarden's Stanford courses on algorithms, available from Coursera are particularly good and recommended).
+
 
 
