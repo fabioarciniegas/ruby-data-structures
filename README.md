@@ -1,4 +1,4 @@
-Non-trivial data structures and algorithms implemented in Ruby for fun (yet correctly).
+Data structures and algorithms implemented in Ruby for fun (yet correctly).
 
  - AVL Tree
  - BinaryHeap
